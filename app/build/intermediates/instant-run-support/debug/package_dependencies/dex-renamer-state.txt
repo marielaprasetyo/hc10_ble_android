@@ -1,0 +1,10 @@
+#Thu Mar 09 15:20:42 CST 2017
+renamed.2=classes2.dex
+renamed.1=classes.dex
+renamed.0=classes3.dex
+base.2=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_a7567150e757d7d6ddb56849ec04dfb2a851d40f
+base.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a10508fa6c55adf8221fc956b9ec88a86634fc
+base.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d
+file.2=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_a7567150e757d7d6ddb56849ec04dfb2a851d40f/classes.dex
+file.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a10508fa6c55adf8221fc956b9ec88a86634fc/classes.dex
+file.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d/classes.dex

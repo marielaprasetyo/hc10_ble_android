@@ -1,0 +1,7 @@
+#Thu Mar 09 15:20:42 CST 2017
+base.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_40068c51d09aed310e0f13658fa7c0f57e26a101
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9c96f5c00557492e76196a164d1892c1d529c9d8/classes.dex
+base.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9c96f5c00557492e76196a164d1892c1d529c9d8
+file.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_40068c51d09aed310e0f13658fa7c0f57e26a101/classes.dex
