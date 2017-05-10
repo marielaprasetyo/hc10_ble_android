@@ -1,24 +1,24 @@
 #Internal package file, do not edit.
-#Thu Mar 09 15:20:42 CST 2017
-2.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_
-5.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
+#Wed May 10 04:29:32 CST 2017
+2.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_
+5.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
 5.set=ANDROID_RESOURCE
-3.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_40068c51d09aed310e0f13658fa7c0f57e26a101
-6.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+3.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8842e7845cedf5bd46bd024a971f837270dc12bd
+6.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
 2.set=ANDROID_RESOURCE
-4.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9c96f5c00557492e76196a164d1892c1d529c9d8
+4.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_
 count=7
-0.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_/resources.arsc
-5.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_
-4.set=DEX
-6.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_
-1.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
+0.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f/classes.dex
+5.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_
+4.set=ANDROID_RESOURCE
+6.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_
+1.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_/resources.arsc
 1.set=ANDROID_RESOURCE
-2.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
+2.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
 6.set=ANDROID_RESOURCE
-0.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_
-3.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_40068c51d09aed310e0f13658fa7c0f57e26a101/classes.dex
+0.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f
+3.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8842e7845cedf5bd46bd024a971f837270dc12bd/classes.dex
 3.set=DEX
-1.base=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/res/resources-debug.ap_
-4.file=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9c96f5c00557492e76196a164d1892c1d529c9d8/classes.dex
-0.set=ANDROID_RESOURCE
+1.base=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_
+4.file=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
+0.set=DEX

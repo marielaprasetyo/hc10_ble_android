@@ -73,7 +73,7 @@ public class BluetoothLE {
     private List<ScanFilter> filters;
 
     // Stops scanning after 10 seconds.
-    private static final long SCAN_PERIOD = 3000;
+    private static final long SCAN_PERIOD = 4000;
 
     private int testCount = 0;
 
@@ -145,7 +145,14 @@ public class BluetoothLE {
                 Log.i("rssi", "mConnected = true");
                 mConnected = true;
                 //Terminate the BLE connection timeout (10sec)
+
                 mHandler.removeCallbacks(mRunnable);
+                if (Build.VERSION.SDK_INT < 21) {
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                } else {
+                    mLEScanner.stopScan(mScanCallback);
+                }
+
                 ((BluetoothListener) activity).bleConnected();
 
 //                Toast.makeText(activity, "BLE connected", Toast.LENGTH_SHORT).show();
@@ -222,7 +229,7 @@ public class BluetoothLE {
                 mBluetoothLeService.writeDescriptor(dataC, true);
                 Log.i(TAG,"Found Accelerometer !");
 
-                int period = 1000;
+                int period = 100;
                 byte[] p = new byte[1];
                 p[0] = (byte)((period / 10) + 10);
                 mBluetoothLeService.writeCharacteristic(periodC, p);
@@ -414,7 +421,10 @@ public class BluetoothLE {
 
             BluetoothDevice btDevice = result.getDevice();
             if(mDeviceName.equals(btDevice.getName())){
-                Log.i("rssi", "inin");
+                Log.i("inConnect", "inin");
+                Log.i("inConnect", "name="+result.getDevice().getName());
+                Log.i("inConnect", "add="+result.getDevice().getAddress());
+                Log.i("inConnect", "rssi="+rssi);
 
                 mDeviceAddress = btDevice.getAddress();
                 deviceScanned = true;

@@ -31,12 +31,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.text.Html;
 import android.util.Log;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.Queue;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
@@ -218,15 +217,47 @@ public class BluetoothLeService extends Service {
 
         if (UUID_ACC_DATA.equals(characteristic.getUuid()))
         {
-            Integer x = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 0);
-            Integer y = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 1);
-            Integer z = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 2) * -1;
+            byte[] raw_value = characteristic.getValue();
+            Log.i( TAG, "size: " + raw_value.length);
+            //Log.i( TAG, "raw_value[0]: " + raw_value[0] + ",raw_value[1] "+raw_value[1] + ",raw_value[2] " +raw_value[2] );
+            //Log.i( TAG, "raw_value[3]: " + raw_value[3] + ",raw_value[4] "+raw_value[4] + ",raw_value[5] " +raw_value[5] );
 
-            double scaledX = x / 64.0;
-            double scaledY = y / 64.0;
-            double scaledZ = z / 64.0;
+            float pressure_mbar = -1;
+            if(raw_value[2] == -1 && raw_value[4] == -1 && raw_value[5] ==-1)
+            {
 
-            Log.i( TAG, String.format("X:%.2fuT, Y:%.2fuT, Z:%.2fuT", scaledX, scaledY, scaledZ));
+            }
+            else {
+                //Integer x = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 0);
+                //Integer y = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 1);
+                //Integer z = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_SINT8, 2) * -1;
+                int pressure = 0;
+                int convert_H = ((int) raw_value[5]) << 16;
+                int convert_L = ((int) raw_value[4]) << 8;
+                int convert_XL = ((int) raw_value[2]);
+
+                pressure = (convert_H & 0x00FFFFFF) | (convert_L & 0x0000FFFF) | (convert_XL & 0x000000FF);
+                //Log.i(TAG, "5: " + raw_value[5] + ", convert: " + convert5);
+                //Log.i(TAG, "4: " + raw_value[4] + ", convert: " + convert4);
+                //Log.i(TAG, "2: " + raw_value[2] + ", convert: " + convert2);
+                Log.i(TAG, "pressure: " + pressure);
+
+
+                //convert the 2's complement 24 bit to 2's complement 32 bit
+                if ((pressure & (int) 0x00800000) != 0) {
+                    pressure |= 0xFF000000;
+                }
+
+                //Calculate Pressure in mbar
+                pressure_mbar = (float) pressure / 4096.0f;
+            }
+            Log.i( TAG, "pressure_mbar: " + pressure_mbar);
+
+            //double scaledX = x / 64.0;
+            //double scaledY = y / 64.0;
+            //double scaledZ = z / 64.0;
+
+            //Log.i( TAG, String.format("11 X:%.2fuT, Y:%.2fuT, Z:%.2fuT", scaledX, scaledY, scaledZ));
         }
 
         sendBroadcast(intent);
@@ -314,8 +345,10 @@ public class BluetoothLeService extends Service {
         }
         // We want to directly connect to the device, so we are setting the autoConnect
         // parameter to false.
+
         mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
-        Log.d(TAG, "Trying to create a new connection.");
+        boolean success = mBluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+        Log.i("testesttest", "Trying to create a new connection: " + success);
         mBluetoothDeviceAddress = address;
         mConnectionState = STATE_CONNECTING;
         return true;

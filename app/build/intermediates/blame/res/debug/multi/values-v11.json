@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+        "outputFile": "/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 182
                 },
                 "from": {
-                    "file": "/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/src/main/res/values-v11/styles.xml",
+                    "file": "/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/res/values-v11/styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/debug/jniLibs"/></dataSet></merger>

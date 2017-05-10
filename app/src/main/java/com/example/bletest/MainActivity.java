@@ -2,6 +2,7 @@ package com.example.bletest;
 
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,6 +60,10 @@ public class MainActivity extends Activity implements BluetoothListener {
 
         });
 
+        //setBluetooth(false);
+
+        //setBluetooth(true);
+
 	}
 
     @Override
@@ -76,6 +81,37 @@ public class MainActivity extends Activity implements BluetoothListener {
         super.onActivityResult(requestCode, resultCode, data);
 
         ble.onBleActivityResult(requestCode, resultCode, data);
+    }
+
+    public static boolean setBluetooth(boolean enable) {
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        boolean isEnabled = bluetoothAdapter.isEnabled();
+        if (enable && !isEnabled) {
+            return bluetoothAdapter.enable();
+        }
+        else if(!enable && isEnabled) {
+            return bluetoothAdapter.disable();
+        }
+        // No need to change bluetooth state
+        return true;
+    }
+
+    public void enableBT(View view){
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!mBluetoothAdapter.isEnabled()){
+            Intent intentBtEnabled = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            // The REQUEST_ENABLE_BT constant passed to startActivityForResult() is a locally defined integer (which must be greater than 0), that the system passes back to you in your onActivityResult()
+            // implementation as the requestCode parameter.
+            int REQUEST_ENABLE_BT = 1;
+            startActivityForResult(intentBtEnabled, REQUEST_ENABLE_BT);
+        }
+    }
+
+    public void disableBT(View view){
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter.isEnabled()){
+            mBluetoothAdapter.disable();
+        }
     }
 
     @Override

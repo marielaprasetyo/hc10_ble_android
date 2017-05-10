@@ -2,58 +2,76 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/Users/youchuangwen/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3_be2c113645dfbb27c9f7bafc4e234a3630fe79c3.jar" />
+    </item>
+    <item
         is-multidex="true"
-        jar="/Users/william_ke/.android/build-cache/90ecdfd93ac41bca50b5047397a880d88ec5a3be/output/jars/libs/internal_impl-21.0.3.jar"
+        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/libs/internal_impl-21.0.3.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_a7567150e757d7d6ddb56849ec04dfb2a851d40f/classes.dex" />
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="5eb89c0e24becfdbac60b5795b62bee224e79e54">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_40068c51d09aed310e0f13658fa7c0f57e26a101/classes.dex" />
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/william_ke/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9c96f5c00557492e76196a164d1892c1d529c9d8/classes.dex" />
+        sha1="65830fbb57de7eae2838079d904c6196f364fdad">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8842e7845cedf5bd46bd024a971f837270dc12bd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/william_ke/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/youchuangwen/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d/classes.dex" />
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_be2c113645dfbb27c9f7bafc4e234a3630fe79c3/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/william_ke/.android/build-cache/90ecdfd93ac41bca50b5047397a880d88ec5a3be/output/jars/classes.jar"
+        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a10508fa6c55adf8221fc956b9ec88a86634fc/classes.dex" />
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_14c51ac714b82d418c3d3c541d0b217345f8dc37/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/pre-dexed/debug/classes_14c51ac714b82d418c3d3c541d0b217345f8dc37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623.jar" />
     </item>
 
 </items>

@@ -1,10 +1,10 @@
-#Thu Mar 09 15:20:42 CST 2017
-renamed.2=classes2.dex
+#Wed May 10 04:29:32 CST 2017
+renamed.2=classes3.dex
 renamed.1=classes.dex
-renamed.0=classes3.dex
-base.2=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_a7567150e757d7d6ddb56849ec04dfb2a851d40f
-base.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a10508fa6c55adf8221fc956b9ec88a86634fc
-base.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d
-file.2=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_a7567150e757d7d6ddb56849ec04dfb2a851d40f/classes.dex
-file.1=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a10508fa6c55adf8221fc956b9ec88a86634fc/classes.dex
-file.0=/Users/william_ke/Documents/ble project/android project/bletest_ver3/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_ce87274a99179ce1e229286b8e2415f41343d53d/classes.dex
+renamed.0=classes2.dex
+base.2=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_be2c113645dfbb27c9f7bafc4e234a3630fe79c3
+base.1=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_14c51ac714b82d418c3d3c541d0b217345f8dc37
+base.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623
+file.2=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-21.0.3_be2c113645dfbb27c9f7bafc4e234a3630fe79c3/classes.dex
+file.1=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_14c51ac714b82d418c3d3c541d0b217345f8dc37/classes.dex
+file.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623/classes.dex
