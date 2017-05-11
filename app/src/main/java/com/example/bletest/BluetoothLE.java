@@ -3,15 +3,9 @@ package com.example.bletest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
-import android.bluetooth.le.BluetoothLeScanner;
-import android.bluetooth.le.ScanCallback;
-import android.bluetooth.le.ScanFilter;
-import android.bluetooth.le.ScanResult;
-import android.bluetooth.le.ScanSettings;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,7 +13,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
@@ -27,7 +20,6 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.ArrayList;
 
 
 @SuppressLint("NewApi")
@@ -68,12 +60,13 @@ public class BluetoothLE {
     private Handler mHandler;
     private Runnable mRunnable;
 
-    private BluetoothLeScanner mLEScanner;
-    private ScanSettings settings;
-    private List<ScanFilter> filters;
+    private BleScanner bleScanner;
+    //private BluetoothLeScanner mLEScanner;
+    //private ScanSettings settings;
+    //private List<ScanFilter> filters;
 
     // Stops scanning after 10 seconds.
-    private static final long SCAN_PERIOD = 4000;
+    private static final long SCAN_PERIOD = 3000;
 
     private int testCount = 0;
 
@@ -104,14 +97,15 @@ public class BluetoothLE {
             return;
         }
 
-        if (Build.VERSION.SDK_INT >= 21) {
+        /*if (Build.VERSION.SDK_INT >= 21) {
             Log.i("rssi", "Build.VERSION.SDK_INT >= 21");
             mLEScanner = mBluetoothAdapter.getBluetoothLeScanner();
             settings = new ScanSettings.Builder()
                     .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
                     .build();
             filters = new ArrayList<ScanFilter>();
-        }
+        }*/
+        bleScanner = BleScannerFactory.getBleScanner(this, mBluetoothAdapter);
     }
      
 	// Code to manage Service lifecycle.
@@ -138,20 +132,20 @@ public class BluetoothLE {
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            List <BluetoothGattService> serviceList;
+            List<BluetoothGattService> serviceList;
 
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 Log.i("rssi", "mConnected = true");
                 mConnected = true;
                 //Terminate the BLE connection timeout (10sec)
-
                 mHandler.removeCallbacks(mRunnable);
-                if (Build.VERSION.SDK_INT < 21) {
+                /*if (Build.VERSION.SDK_INT < 21) {
                     mBluetoothAdapter.stopLeScan(mLeScanCallback);
                 } else {
                     mLEScanner.stopScan(mScanCallback);
-                }
+                }*/
+                bleScanner.stopScan();
 
                 ((BluetoothListener) activity).bleConnected();
 
@@ -311,6 +305,30 @@ public class BluetoothLE {
         deviceScanned = false;
     }
 
+    public void setDeviceScanned(boolean scanned){
+        deviceScanned = scanned;
+    }
+
+    public boolean getDeviceScanned(){
+        return deviceScanned;
+    }
+
+    public void setDeviceName(String name){
+        mDeviceName = name;
+    }
+
+    public String getDeviceName(){
+        return mDeviceName;
+    }
+
+    public void setDeviceAddress(String addr){
+        mDeviceAddress = addr;
+    }
+
+    public String getDeviceAddress(){
+        return mDeviceAddress;
+    }
+
 	
 	public void bleConnect() {
 		
@@ -339,13 +357,12 @@ public class BluetoothLE {
             mHandler.removeCallbacks(mRunnable);
         }
 
-        if (Build.VERSION.SDK_INT < 21) {
+        /*if (Build.VERSION.SDK_INT < 21) {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         } else {
             mLEScanner.stopScan(mScanCallback);
-        }
-
-
+        }*/
+        bleScanner.stopScan();
     }
 
     public void bleWriteState(byte state) {
@@ -361,21 +378,23 @@ public class BluetoothLE {
         mHandler.postDelayed(mRunnable = new Runnable() {
             @Override
             public void run() {
-                if (Build.VERSION.SDK_INT < 21) {
+                /*if (Build.VERSION.SDK_INT < 21) {
                     mBluetoothAdapter.stopLeScan(mLeScanCallback);
                 } else {
                     mLEScanner.stopScan(mScanCallback);
+                }*/
+                bleScanner.stopScan();
 
-                }
                 ((BluetoothListener) activity).bleConnectionTimeout();
 //                    Log.i("BLE", "thread run");
             }
         }, SCAN_PERIOD);
-        if (Build.VERSION.SDK_INT < 21) {
+        /*if (Build.VERSION.SDK_INT < 21) {
             mBluetoothAdapter.startLeScan(mLeScanCallback);
         } else {
             mLEScanner.startScan(filters, settings, mScanCallback);
-        }
+        }*/
+        bleScanner.startScan();
     }
 	
 	private static IntentFilter makeGattUpdateIntentFilter() {
@@ -407,6 +426,7 @@ public class BluetoothLE {
 		
 	}
 
+    /*@RequiresApi(21)
     private ScanCallback mScanCallback = new ScanCallback() {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
@@ -436,11 +456,11 @@ public class BluetoothLE {
 
 
                 //mHandler.removeCallbacks(mRunnable);
-                /*if (Build.VERSION.SDK_INT < 21) {
-                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
-                } else {
-                    mLEScanner.stopScan(mScanCallback);
-                }*/
+                //if (Build.VERSION.SDK_INT < 21) {
+                //    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                //} else {
+                //    mLEScanner.stopScan(mScanCallback);
+                //}
             }
         }
 
@@ -455,10 +475,16 @@ public class BluetoothLE {
         public void onScanFailed(int errorCode) {
             Log.e("Scan Failed", "Error Code: " + errorCode);
         }
-    };
+    };*/
 
+    public void scanFound() {
+        Intent gattServiceIntent = new Intent(activity, BluetoothLeService.class);
+
+        activity.bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
+        activity.registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
+    }
     // Device scan callback.
-    private BluetoothAdapter.LeScanCallback mLeScanCallback =
+    /*private BluetoothAdapter.LeScanCallback mLeScanCallback =
             new BluetoothAdapter.LeScanCallback() {
                 @Override
                 public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
@@ -484,4 +510,5 @@ public class BluetoothLE {
                     }
                 }
             };
+            */
 }

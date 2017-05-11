@@ -365,8 +365,8 @@ public class BluetoothLeService extends Service {
         // parameter to false.
 
         mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
-        boolean success = mBluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
-        Log.i("testesttest", "Trying to create a new connection: " + success);
+        //boolean success = mBluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+        //Log.i("testesttest", "Trying to create a new connection: " + success);
         mBluetoothDeviceAddress = address;
         mConnectionState = STATE_CONNECTING;
         return true;
