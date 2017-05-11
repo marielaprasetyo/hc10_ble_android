@@ -33,6 +33,12 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Queue;
 import java.util.UUID;
@@ -45,6 +51,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 @SuppressLint("NewApi")
 public class BluetoothLeService extends Service {
     private final static String TAG = "BluetoothLeService";
+
+    int MAX_SIZE = 10;
+    int [] buffer = new int[MAX_SIZE];
+    int currentI = 0;
 
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -240,8 +250,16 @@ public class BluetoothLeService extends Service {
                 //Log.i(TAG, "5: " + raw_value[5] + ", convert: " + convert5);
                 //Log.i(TAG, "4: " + raw_value[4] + ", convert: " + convert4);
                 //Log.i(TAG, "2: " + raw_value[2] + ", convert: " + convert2);
-                Log.i(TAG, "pressure: " + pressure);
+                Log.i("pre_raw", "pressure: " + pressure);
+                writeToFile(String.valueOf(pressure));
+                buffer[currentI] = pressure;
+                currentI = (currentI + 1) % MAX_SIZE;
 
+                long total_amount = 0;
+                for(int i=0;i<MAX_SIZE;i++)
+                    total_amount = total_amount + buffer[i];
+
+                Log.i("pre_raw", "avg: " + (total_amount/MAX_SIZE));
 
                 //convert the 2's complement 24 bit to 2's complement 32 bit
                 if ((pressure & (int) 0x00800000) != 0) {
@@ -496,6 +514,36 @@ public class BluetoothLeService extends Service {
             nextWrite();
         }
     }
+
+    private void writeToFile(String logMsg) {
+        // Write to files
+        File mainStorage = MainStorage.getMainStorageDirectory();
+        try {
+            Calendar cal = Calendar.getInstance();
+            cal.setTimeInMillis(System.currentTimeMillis());
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String calString = df.format(cal.getTime());
+
+            SimpleDateFormat nameDF = new SimpleDateFormat("yyyy-MM-dd");
+
+            String fileName = "log_state_change_" + nameDF.format(cal.getTime()) + ".txt";
+            File logFile = new File(mainStorage, fileName);
+            FileOutputStream fOut = new FileOutputStream(new File(logFile.getAbsolutePath().toString()), true);
+
+            OutputStreamWriter osw = new OutputStreamWriter(fOut);
+            osw.write(calString + ", "
+                    + System.currentTimeMillis() + ", "
+                    + logMsg
+                    + "\n");
+            osw.flush();
+            osw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
 
 

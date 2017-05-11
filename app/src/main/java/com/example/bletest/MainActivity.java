@@ -64,6 +64,8 @@ public class MainActivity extends Activity implements BluetoothListener {
 
         //setBluetooth(true);
 
+        MainStorage.setActivity(this);
+
 	}
 
     @Override

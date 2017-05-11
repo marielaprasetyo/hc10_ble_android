@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:2:1-43:12
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:3:5-34
 		INJECTED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml
@@ -23,53 +23,65 @@ uses-permission#android.permission.BLUETOOTH_ADMIN
 ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:8:5-74
 	android:name
 		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:8:22-71
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:10:22-78
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:11:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:12:22-77
 uses-sdk
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:10:5-12:41
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:14:5-16:41
 MERGED from [com.android.support:support-v4:21.0.3] /Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/AndroidManifest.xml:15:5-42
 	android:targetSdkVersion
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:12:9-38
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:16:9-38
 		INJECTED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:11:9-34
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:15:9-34
 		INJECTED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml
 uses-feature#android.hardware.bluetooth_le
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:14:2-16:35
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:18:2-20:35
 	android:required
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:16:9-32
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:20:9-32
 	android:name
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:15:9-53
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:19:9-53
 application
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:18:5-41:19
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:22:5-45:19
 MERGED from [com.android.support:support-v4:21.0.3] /Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/AndroidManifest.xml:16:5-19
 	android:label
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:21:9-41
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:25:9-41
 	android:allowBackup
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:23:9-35
 	android:icon
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:20:9-45
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:24:9-45
 	android:theme
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:22:9-40
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:26:9-40
 activity#com.example.bletest.MainActivity
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:23:9-31:20
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:27:9-35:20
 	android:label
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:25:13-45
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:29:13-45
 	android:name
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:24:13-41
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:28:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:26:13-30:29
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:27:17-69
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:27:25-66
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:29:17-77
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:33:27-74
 service#com.example.bletest.BluetoothLeService
-ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:34:9-37:16
+ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:38:9-41:16
 	android:enabled
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:36:13-35
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:40:13-35
 	android:name
-		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:35:13-47
+		ADDED from /Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/src/main/AndroidManifest.xml:39:13-47
