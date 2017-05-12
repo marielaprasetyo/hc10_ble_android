@@ -1,4 +1,7 @@
-#Thu May 11 17:36:09 CST 2017
-base.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+#Thu May 11 21:11:46 CST 2017
+base.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8842e7845cedf5bd46bd024a971f837270dc12bd/classes.dex
+base.1=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8842e7845cedf5bd46bd024a971f837270dc12bd
+file.0=/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f/classes.dex

@@ -12,21 +12,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/libs/internal_impl-21.0.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_77ca29444194b3414ea6e073b05fb26c465b330f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/youchuangwen/.android/build-cache/02ee359ca7c1a896abac013923d5d0917ef041a4/output/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/youchuangwen/Documents/bitbucket_workspace/bletest_for_pm2.5/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-21.0.3_081b747a80ca8913eb42e3b4a8e33cc0a05ef623/classes.dex" />
     </item>
     <item
         is-multidex="true"

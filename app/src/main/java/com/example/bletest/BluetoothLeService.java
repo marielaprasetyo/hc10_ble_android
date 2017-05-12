@@ -52,9 +52,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class BluetoothLeService extends Service {
     private final static String TAG = "BluetoothLeService";
 
-    int MAX_SIZE = 10;
-    int [] buffer = new int[MAX_SIZE];
+    int MAX_SIZE = 12;
+    int SKIP_NUM = 4;
     int currentI = 0;
+    double [] buffer = new double[MAX_SIZE];
 
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -229,8 +230,8 @@ public class BluetoothLeService extends Service {
         {
             byte[] raw_value = characteristic.getValue();
             Log.i( TAG, "size: " + raw_value.length);
-            //Log.i( TAG, "raw_value[0]: " + raw_value[0] + ",raw_value[1] "+raw_value[1] + ",raw_value[2] " +raw_value[2] );
-            //Log.i( TAG, "raw_value[3]: " + raw_value[3] + ",raw_value[4] "+raw_value[4] + ",raw_value[5] " +raw_value[5] );
+            Log.i( TAG, "raw_value[0]: " + raw_value[0] + ",raw_value[1] "+raw_value[1] + ",raw_value[2] " +raw_value[2] );
+            Log.i( TAG, "raw_value[3]: " + raw_value[3] + ",raw_value[4] "+raw_value[4] + ",raw_value[5] " +raw_value[5] );
 
             float pressure_mbar = -1;
             if(raw_value[2] == -1 && raw_value[4] == -1 && raw_value[5] ==-1)
@@ -246,28 +247,54 @@ public class BluetoothLeService extends Service {
                 int convert_L = ((int) raw_value[4]) << 8;
                 int convert_XL = ((int) raw_value[2]);
 
-                pressure = (convert_H & 0x00FFFFFF) | (convert_L & 0x0000FFFF) | (convert_XL & 0x000000FF);
-                //Log.i(TAG, "5: " + raw_value[5] + ", convert: " + convert5);
-                //Log.i(TAG, "4: " + raw_value[4] + ", convert: " + convert4);
-                //Log.i(TAG, "2: " + raw_value[2] + ", convert: " + convert2);
-                Log.i("pre_raw", "pressure: " + pressure);
-                writeToFile(String.valueOf(pressure));
-                buffer[currentI] = pressure;
-                currentI = (currentI + 1) % MAX_SIZE;
+                //if ((convert_XL & (int) 0x00000080) != 0) {
+                //    convert_XL &= 0x0000007F;
+                //}
 
-                long total_amount = 0;
-                for(int i=0;i<MAX_SIZE;i++)
-                    total_amount = total_amount + buffer[i];
+                convert_H = convert_H & 0x00FF0000;
+                convert_L = convert_L & 0x0000FF00;
+                convert_XL = convert_XL & 0x000000FF;
 
-                Log.i("pre_raw", "avg: " + (total_amount/MAX_SIZE));
+                pressure = convert_H  | convert_L | convert_XL;
+                Log.i(TAG, "5: " + raw_value[5] + ", convert: " + convert_H);
+                Log.i(TAG, "4: " + raw_value[4] + ", convert: " + convert_L);
+                Log.i(TAG, "2: " + raw_value[2] + ", convert: " + convert_XL);
+
 
                 //convert the 2's complement 24 bit to 2's complement 32 bit
                 if ((pressure & (int) 0x00800000) != 0) {
                     pressure |= 0xFF000000;
                 }
 
+                Log.i("pre_raw", "pressure: " + pressure);
+                writeToFile(String.valueOf(pressure));
+                buffer[currentI] = (double) pressure;
+                currentI = (currentI + 1) % MAX_SIZE;
+
+                double total_amount = 0;
+                double min_value = 5000000.0, max_value = 0;
+                int minI = 0, maxI= 0;
+                int preMinI = 0, preMaxI = 0;
+                for(int i=0;i<MAX_SIZE;i++) {
+                    total_amount = total_amount + buffer[i];
+                    if(buffer[i] < min_value) {
+                        preMinI = minI;
+                        minI = i;
+                        min_value = buffer[i];
+                    }
+                    if(buffer[i] > max_value) {
+                        preMaxI = maxI;
+                        maxI = i;
+                        max_value = buffer[i];
+                    }
+                }
+
+                total_amount = total_amount - buffer[minI] - buffer[maxI] - buffer[preMinI] - buffer[preMaxI];
+
+                Log.i("pre_raw_avg", "avg: " + (total_amount/ (MAX_SIZE-SKIP_NUM)));
+
                 //Calculate Pressure in mbar
-                pressure_mbar = (float) pressure / 4096.0f;
+                pressure_mbar = (float) total_amount / 4096.0f;
             }
             Log.i( TAG, "pressure_mbar: " + pressure_mbar);
 
